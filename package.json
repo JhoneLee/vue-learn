@@ -1,0 +1,26 @@
+{
+  "name": "vue-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhoneLee/vue-learn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JhoneLee/vue-learn/issues"
+  },
+  "homepage": "https://github.com/JhoneLee/vue-learn#readme",
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "vue": "^2.1.10"
+  }
+}

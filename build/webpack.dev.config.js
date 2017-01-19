@@ -2,10 +2,12 @@ var path=require('path');
 var HtmlWebpackPlugin=require('html-webpack-plugin');
 var webpack=require('webpack');
 module.exports={
-    entry: ['webpack-hot-middleware/client',path.resolve(__dirname,'../asset/js/main.js')],
+    //entry: [path.resolve(__dirname,'../asset/js/main.js'),'webpack-hot-middleware/client?reload=true'],
+    entry:[path.resolve(__dirname,'./dev-client.js'),path.resolve(__dirname,'../asset/js/main.js')],
     output: {
         path:path.resolve(__dirname,'../ouput'),  //打包输出路径
-        publicPath:'/', // dev server中的服务器路径
+        //publicPath:'http://localhost:8888/', // dev server中的服务器路径
+        publicPath:'/',
         filename: 'js/[name].js', //[name].[hash].js
         chunkFilename: '[id].[name].[chunkhash].js' //[id].[chunkhash].js 未被列在entry中需要被打包的文件
     },

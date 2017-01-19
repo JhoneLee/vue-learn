@@ -2,9 +2,9 @@
 var express = require('express')
 var webpack = require('webpack')
 var config = require('./webpack.dev.config')
-
+//var bs = require('browser-sync').create();
 // 创建一个express实例
-var app = express()
+var app = express();
 
 // 调用webpack并把配置传递过去
 var compiler = webpack(config)
@@ -32,11 +32,23 @@ compiler.plugin('compilation', function (compilation) {
 app.use(devMiddleware);
 app.use(hotMiddleware);
 
+if(module.hot) {
+    module.hot.accept();
+}
+
 // 监听 8888端口，开启服务器
 app.listen(8888, function (err) {
     if (err) {
         console.log(err)
         return
     }
+    // bs.init({
+    //     open: false,
+    //     ui: false,
+    //     notify: false,
+    //     proxy: 'localhost:8888',
+    //     files: ['**'],
+    //     port: 8887
+    // });
     console.log('Listening at http://localhost:8888')
 })
